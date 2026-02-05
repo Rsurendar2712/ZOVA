@@ -1,0 +1,152 @@
+/* ===== BASE STYLES (DESKTOP DEFAULT) ===== */
+
+body { 
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    background: #f4f6f8;
+  }
+  
+
+  
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
+  }
+  
+  .card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+  }
+  
+  .card.small {
+    font-size: 14px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .options button {
+    background: #eee;
+    color: #000;
+  }
+  
+  .options .active {
+    background: #111;
+    color: #fff;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* ===== TABLET (≤ 768px) ===== */
+  
+  @media (max-width: 768px) {
+  
+    .header {
+      padding: 16px;
+      text-align: center;
+    }
+  
+    .container {
+      padding: 12px;
+    }
+  
+    .row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  
+    button {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .options {
+      gap: 8px;
+    }
+  
+    .sticky {
+      padding: 12px;
+    }
+  }
+  
+  /* ===== MOBILE (≤ 480px) ===== */
+  
+  @media (max-width: 480px) {
+  
+    body {
+      font-size: 14px;
+    }
+  
+    .header h1 {
+      font-size: 20px;
+    }
+  
+    .card {
+      padding: 12px;
+      border-radius: 8px;
+    }
+  
+    .options button {
+      flex: 1 1 100%;
+    }
+  
+    textarea {
+      min-height: 80px;
+    }
+  
+    .sticky {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  
+    .sticky button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+  
