@@ -7,7 +7,7 @@ function About() {
     <div className="about-container">
 
       {/* HERO SECTION */}
-      <section className="about-hero">
+      <section className="about-hero" id='about-us'>
         <motion.h1 
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
