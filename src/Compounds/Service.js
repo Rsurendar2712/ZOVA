@@ -25,7 +25,7 @@ function Service() {
   };
 
   return (
-    <section className="service-options">
+    <section className="service-options" id='service-options'>
       <h2>Choose Your Service</h2>
 
       {/* wrapper for arrow */}
