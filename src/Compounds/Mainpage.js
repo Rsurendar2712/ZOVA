@@ -5,7 +5,7 @@ import Service from "./Service";
 import About from "./About";
 
 
-function Main_page() {
+function Mainpage() {
   return (
     <div className="Main-page">
        <div className="Main-page1">
@@ -24,4 +24,4 @@ function Main_page() {
   )
 }
 
-export default Main_page;
+export default Mainpage;

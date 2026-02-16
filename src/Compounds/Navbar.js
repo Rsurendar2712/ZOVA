@@ -21,7 +21,7 @@ function Navbar() {
 
         {/* Menu */}
         <ul className={menuOpen ? "nav-links active" : "nav-links"}>
-          <li><Link to="/Main_page" className="btn">Home</Link></li>
+          <li><Link to="/Mainpage" className="btn">Home</Link></li>
           <li><Link to="/About Us" className="btn">About Us</Link></li>
 
 
