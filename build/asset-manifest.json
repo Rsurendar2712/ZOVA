@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/ZOVA/static/css/main.ab47667d.css",
+    "main.js": "/ZOVA/static/js/main.fcaaeee4.js",
+    "static/media/wemen.jpg": "/ZOVA/static/media/wemen.4ba4a0fdf3ff3d38bc0c.jpg",
+    "static/media/nature.mp4": "/ZOVA/static/media/nature.656ab4e50e28c0c15abc.mp4",
+    "static/media/Haircut.jpg": "/ZOVA/static/media/Haircut.113cf2e503e22e6c8201.jpg",
+    "static/media/logo.jpg": "/ZOVA/static/media/logo.ce1ec022e3653785acf6.jpg",
+    "static/media/men.jpg": "/ZOVA/static/media/men.5ee251e918e121b9aed9.jpg",
+    "index.html": "/ZOVA/index.html",
+    "main.ab47667d.css.map": "/ZOVA/static/css/main.ab47667d.css.map",
+    "main.fcaaeee4.js.map": "/ZOVA/static/js/main.fcaaeee4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab47667d.css",
+    "static/js/main.fcaaeee4.js"
+  ]
+}

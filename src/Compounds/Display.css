@@ -67,8 +67,9 @@
     z-index: 10;
   }
   
-  .arrow.left {
+  .arrow-left {
     left: -10px;
+    
   }
   
   .arrow.right {
@@ -77,12 +78,31 @@
   
   /* MOBILE */
   @media (max-width: 768px) {
-    .offer-video video {
-      height: 180px;
-    }
-    .offer-card {
-      min-width: 220px;
-      height: 130px;
-    }
+  .offer-video video {
+    height: 180px;
   }
+
+  .offer-card {
+    min-width: 220px;
+    height: 130px;
+  }
+
+  .arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  .arrow-left {
+    left: 5px;   /* avoid negative */
+ 
+    width:6px;
+  }
+
+  .arrow-right {
+    right: 5px;  /* avoid negative */
+       width: 6px;
+  }
+}
+
   

@@ -13,8 +13,8 @@ function Service() {
 
   const categories = [
     { name: "Men", img: men, path: "../Men" },
-    { name: "Women", img: women, path: "/services/women" },
-    { name: "Kids", img: kids, path: "/services/kids" },
+    { name: "Women", img: women, path: "../Women" },
+    { name: "Kids", img: kids, path: "../Kids" },
   ];
 
   const scrollRight = () => {
