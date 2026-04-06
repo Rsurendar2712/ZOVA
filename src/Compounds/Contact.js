@@ -18,7 +18,11 @@ const Contact = () => {
               <FaMapMarkerAlt className="gold-icon" />
               <h3>Visit Us</h3>
             </div>
-            <p>123 Luxury Lane, Fashion District<br />Chennai, Tamil Nadu 600001</p>
+
+            <p>   Old no. 656, New no. 438, A-4, <br />Thiruvottiyur High Rd,
+Tondiarpet,<br /> Chennai, Tamil Nadu 600081</p>
+         
+            
           </div>
 
           <div className="info-card">
@@ -41,7 +45,7 @@ const Contact = () => {
               <FaEnvelope className="gold-icon" />
               <h3>Contact Details</h3>
             </div>
-            <p className="contact-text">+91 98765 43210</p>
+            <p className="contact-text">+91 78718 10137</p>
             <p className="contact-text">hello@zova-salon.com</p>
           </div>
 

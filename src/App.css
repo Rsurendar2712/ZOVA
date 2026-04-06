@@ -1,3 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  height: auto;       /* Prevents the body from stretching past content */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
 }
