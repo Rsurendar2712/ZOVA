@@ -1,110 +1,258 @@
+/* Global Reset for the Page */
 .about-container {
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-}
-
-/* HERO */
-.about-hero {
-  text-align: center;
-  padding: 120px 20px 80px;
-}
-
-.about-hero h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.about-hero p {
-  font-size: 18px;
-  max-width: 600px;
-  margin: auto;
-  opacity: 0.8;
-}
-
-/* MISSION */
-.about-mission {
-  display: flex;
-  justify-content: center;
-  padding: 60px 20px;
-}
-
-.mission-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
-  padding: 40px;
-  border-radius: 20px;
-  max-width: 700px;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.mission-card h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
-}
-
-.mission-card p {
-  opacity: 0.85;
+  font-family: 'Playfair Display', serif; /* Use a Serif font for a luxury feel */
+  color: #333;
   line-height: 1.6;
 }
 
-/* STATS */
-.about-stats {
+/* 1. Hero Styling */
+.about-hero {
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=1500');
+  background-size: cover;
+  background-position: center;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 60px;
-  padding: 80px 20px;
-  flex-wrap: wrap;
-}
-
-.stat {
+  color: white;
   text-align: center;
 }
 
-.stat h2 {
-  font-size: 42px;
+.about-hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
   margin-bottom: 10px;
-  color: #00f5a0;
 }
 
-.stat p {
-  opacity: 0.8;
+/* 2. Story Grid */
+.story-section {
+  padding: 80px 10%;
+  background-color: #fff;
 }
 
-/* CTA */
-.about-cta {
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.story-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 20px 20px 0px #f3f3f3; /* Modern offset shadow */
+}
+
+.subtitle {
+  color: #bfa37e; /* Gold accent color */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.story-text h2 {
+  font-size: 2.5rem;
+  margin: 15px 0;
+}
+
+/* 3. Values Section */
+.values-section {
+  background-color: #fafafa;
+  padding: 80px 10%;
+}
+
+.values-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.value-card {
+  flex: 1;
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px;
+  background: white;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  border-bottom: 3px solid transparent;
 }
 
-.about-cta h2 {
-  margin-bottom: 30px;
+.value-card:hover {
+  transform: translateY(-10px);
+  border-bottom: 3px solid #bfa37e;
 }
 
-.about-cta button {
-  padding: 14px 40px;
-  border-radius: 30px;
-  border: none;
-  background: #00f5a0;
-  color: #000;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
+.value-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-.about-cta button:hover {
-  background: #00c17d;
+.value-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
 }
 
-/* RESPONSIVE */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .about-hero h1 {
-    font-size: 32px;
+  .story-grid, .values-grid {
+    grid-template-columns: 1fr;
+    flex-direction: column;
   }
+  
+  .about-hero h1 { font-size: 2.5rem; }
+}
 
-  .about-stats {
-    gap: 30px;
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------Contact-------------------------------------------- */
+/* Container Spacing */
+.contact-container {
+  padding: 80px 10%;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subtitle {
+  color: #bfa37e; /* Gold theme */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.contact-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-top: 10px;
+}
+
+/* Grid System */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Info Cards */
+.info-card {
+  background: #fcfcfc;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #f0f0f0;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.gold-icon {
+  color: #bfa37e;
+  font-size: 1.2rem;
+}
+
+.info-card h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.info-card p, .hour-item {
+  color: #555;
+  line-height: 1.6;
+}
+
+.hour-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.closed-tag {
+  color: #e53e3e;
+  font-weight: 600;
+}
+
+/* Social & WhatsApp Styling */
+.social-connect-card {
+  background: #1a1a1a; /* Dark contrast for the action card */
+  color: white;
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.social-btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.social-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  background: #333;
+  transition: 0.3s;
+}
+
+.social-pill:hover {
+  background: #bfa37e;
+}
+
+.booking-divider {
+  margin: 25px 0;
+  border-top: 1px solid #333;
+  position: relative;
+}
+
+.booking-divider span {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  padding: 0 15px;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.whatsapp-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Mobile Fix */
+@media (max-width: 850px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr;
   }
 }

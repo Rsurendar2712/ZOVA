@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Display from "./Display";
 import Service from "./Service";
 import About from "./About";
+import Contact from './Contact';
 
 
 function Mainpage() {
@@ -34,6 +35,9 @@ function Mainpage() {
       </div>
        <div className="Main-page3" id='about-us'>
       <About/>
+      </div>
+      <div className="Main-page4" id='Contact'>
+      <Contact/>
       </div>
     </div>
   )

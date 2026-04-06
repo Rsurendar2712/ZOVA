@@ -1,70 +1,59 @@
-import React from "react";
-import { motion } from "framer-motion";
-import "./About.css";
+import React from 'react';
+import './About.css';
 
-function About() {
+const About = () => {
   return (
     <div className="about-container">
-
-      {/* HERO SECTION */}
+      {/* 1. Hero Section */}
       <section className="about-hero">
-        <motion.h1 
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Crafting Digital Experiences
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          We build modern, scalable and premium digital products 
-          that elevate brands and businesses.
-        </motion.p>
+        <div className="hero-content">
+          <h1>Redefining Elegance</h1>
+          <p>Where artistry meets relaxation.</p>
+        </div>
       </section>
 
-      {/* MISSION SECTION */}
-      <section className="about-mission">
-        <motion.div 
-          className="mission-card"
-          whileHover={{ scale: 1.03 }}
-        >
-          <h2>Our Mission</h2>
-          <p>
-            To deliver high-quality digital solutions that combine design, 
-            performance and innovation. We believe in creating 
-            meaningful experiences that drive real impact.
-          </p>
-        </motion.div>
+      {/* 2. Our Story Section */}
+      <section className="story-section">
+        <div className="story-grid">
+          <div className="story-image">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800" alt="Salon Interior" />
+          </div>
+          <div className="story-text">
+            <span className="subtitle">Established 2018</span>
+            <h2>Our Story</h2>
+            <p>
+              Founded with a passion for excellence, ZOVA Salon was created to provide a sanctuary 
+              where clients can escape the hustle of daily life. Our mission is simple: to help 
+              you discover your most confident self through personalized care and master craftsmanship.
+            </p>
+            <p>
+              Whether you are looking for a bold transformation or a subtle refresh, our 
+              expert stylists bring years of international experience to every chair.
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* STATS SECTION */}
-      <section className="about-stats">
-        <motion.div className="stat" whileHover={{ scale: 1.1 }}>
-          <h2>50+</h2>
-          <p>Projects Delivered</p>
-        </motion.div>
-
-        <motion.div className="stat" whileHover={{ scale: 1.1 }}>
-          <h2>100%</h2>
-          <p>Client Satisfaction</p>
-        </motion.div>
-
-        <motion.div className="stat" whileHover={{ scale: 1.1 }}>
-          <h2>24/7</h2>
-          <p>Support Available</p>
-        </motion.div>
+      {/* 3. Why Choose Us (Value Props) */}
+      <section className="values-section">
+        <div className="values-grid">
+          <div className="value-card">
+            <div className="icon">✂️</div>
+            <h3>Expert Stylists</h3>
+            <p>Our team undergoes monthly training to stay ahead of global trends.</p>
+          </div>
+          <div className="value-card">
+            <div className="icon">🌿</div>
+            <h3>Premium Products</h3>
+            <p>We use only organic, cruelty-free formulas for your hair and skin health.</p>
+          </div>
+          <div className="value-card">
+            <div className="icon">☕</div>
+            <h3>Luxury Experience</h3>
+            <p>Enjoy premium coffee and a tranquil atmosphere during your visit.</p>
+          </div>
+        </div>
       </section>
-
-      {/* CTA SECTION */}
-      <section className="about-cta">
-        <h2>Let’s Build Something Amazing Together</h2>
-        <button>Contact Us</button>
-      </section>
-
     </div>
   );
 };

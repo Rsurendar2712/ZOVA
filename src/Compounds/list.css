@@ -172,7 +172,57 @@
   .cart-info p {
     margin: 0;
     font-size: 13px;
-  }
+  }/* The main container */
+.cart-controls {
+  display: flex;
+  align-items: center;    /* Keeps the buttons and number on the same horizontal line */
+  gap: 12px;              /* Adds clean, even space between all elements */
+  margin-top: 10px;
+}
+
+/* Base style for ALL buttons in the control group */
+.cart-controls button {
+  /* THE CENTERING FIX: */
+  display: inline-flex;   
+  align-items: center;    /* Centers symbol vertically */
+  justify-content: center; /* Centers symbol horizontally */
+  
+  /* UNIFORMITY: Make all buttons the exact same size */
+  width: 32px;
+  height: 32px;
+  padding: 0;             /* Remove default padding that pushes symbols to the side */
+  
+  /* STYLING: */
+  background-color: #1a1a1a; 
+  color: #4ade80;         /* A professional green for + and - */
+  border: none;
+  border-radius: 6px;     /* Modern, slightly rounded corners */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+/* Hover effect for better UX */
+.cart-controls button:hover {
+  background-color: #333;
+}
+
+/* The Quantity Number styling */
+.cart-controls span {
+  font-weight: 600;
+  font-size: 16px;
+  min-width: 20px;        /* Prevents the layout from jumping when 9 becomes 10 */
+  text-align: center;
+}
+
+/* Specific styling for the Remove button */
+.cart-controls .remove-btn {
+  color: #ff4d4d;         /* Professional red for the X */
+  background-color: #1a1a1a;
+  font-size: 14px;        /* Icons usually need to be a bit smaller to look centered */
+  margin-left: 4px;       /* Extra bit of space to separate "Actions" from "Quantity" */
+}
   
   .book-btn {
     background: #fff;
