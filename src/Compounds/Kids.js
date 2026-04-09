@@ -1,5 +1,6 @@
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import Info from "../Data/Info";
 import Navbar from "./Navbar";
 import "./list.css";
@@ -13,27 +14,77 @@ function Kids() {
   const datas = Info?.kids;
   if (!datas || !datas.categories) return <p>No data available</p>;
 
-  const addToCart = (item) => {
-    setCart((prev) => [...prev, item]);
+  // ADD SERVICE
+  
+const addToCart = (item, category, title) => {
+  setCart((prev) => {
+    const existing = prev.find(
+      (i) =>
+        i.name === item.name &&
+        i.category === category &&
+        i.title === title
+    );
+
+    if (existing) {
+      return prev.map((i) =>
+        i.name === item.name &&
+        i.category === category &&
+        i.title === title
+          ? { ...i, qty: i.qty + 1 }
+          : i
+      );
+    }
+
+  
+    return [...prev, { ...item, category, title, qty: 1 }];
+  });
+};
+
+
+  // REMOVE SERVICE
+  const removeItem = (name) => {
+    setCart((prev) => prev.filter((item) => item.name !== name));
   };
 
-  const totalAmount = cart.reduce((sum, item) => sum + item.price, 0);
+  // INCREASE QTY
+  // const increaseQty = (name) => {
+  //   setCart((prev) =>
+  //     prev.map((item) =>
+  //       item.name === name ? { ...item, qty: item.qty + 1 } : item
+  //     )
+  //   );
+  // };
+
+  // DECREASE QTY
+  const decreaseQty = (name) => {
+    setCart((prev) =>
+      prev
+        .map((item) =>
+          item.name === name ? { ...item, qty: item.qty - 1 } : item
+        )
+        .filter((item) => item.qty > 0)
+    );
+  };
+
+  // TOTAL PRICE
+  const totalAmount = cart.reduce(
+    (sum, item) => sum + item.price * item.qty,
+    0
+  );
 
   const goToBooking = () => {
     navigate("/booking", { state: { cart, totalAmount } });
   };
 
   return (
-
     <div className="men-page">
-      <div   className="Navbar">
-      <Navbar />
+      <header className="navbar-fixed-top">
+         <Navbar cartCount={cart.length} />
+      </header>
 
-      </div>
-
-
-      <h1 className="page-title">{datas.title}</h1>
-
+      
+ <h1 className="page-title">{datas.title}</h1>
+      {/* SEARCH */}
       <div className="search-box">
         <input
           type="text"
@@ -43,6 +94,7 @@ function Kids() {
         />
       </div>
 
+      {/* SERVICES */}
       {datas.categories.map((category, index) => {
         const filteredItems = category.items.filter((item) =>
           item.name.toLowerCase().includes(search.toLowerCase())
@@ -51,21 +103,25 @@ function Kids() {
         if (filteredItems.length === 0) return null;
 
         return (
+          
           <div key={index} className="category">
-            <h2 className="category-title">{category.name}</h2>
+            <h2 className="category-title">{category.name} </h2>
 
             {filteredItems.map((item, i) => (
               <div key={i} className="item-card">
                 <div>
-                  <h3>{item.name}</h3>
-                  {item.duration && <p className="duration">{item.duration}</p>}
+                  
+                  <h3>{item.name } </h3>
+                  {item.duration && (
+                    <p className="duration">{item.duration}</p>
+                  )}
                 </div>
 
                 <div className="item-action">
                   <span>₹{item.price}</span>
                   <button
                     className="add-btn"
-                    onClick={() => addToCart(item)}
+                    onClick={() => addToCart(item,category.name,"Men")}
                   >
                     Add
                   </button>
@@ -76,6 +132,37 @@ function Kids() {
         );
       })}
 
+      {/* CART LIST (EDIT BOOKING) */}
+      {cart.length > 0 && (
+        <div className="cart-list" id='Cart'>
+          <h2>Cart 🛒</h2>
+
+          {cart.map((item, index) => (
+            <div key={index} className="cart-item">
+              
+
+              <div className="cart-controls">
+                <button onClick={() => decreaseQty(item.name)}>-</button>
+                <b>{item.category}</b><br/>
+              <span>{item.name}</span>
+                <span>{item.qty}</span>
+
+        
+
+                <button
+                  className="remove-btn"
+                  onClick={() => removeItem(item.name)}
+                >
+                  ❌
+                </button>
+              </div>
+
+              <strong>₹{item.price * item.qty}</strong>
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* BOTTOM CART */}
       {cart.length > 0 && (
         <div className="bottom-cart">
@@ -83,6 +170,8 @@ function Kids() {
             <p>{cart.length} Services Added</p>
             <strong>₹{totalAmount}</strong>
           </div>
+        
+
           <button className="book-btn" onClick={goToBooking}>
             Book Now
           </button>
@@ -93,3 +182,4 @@ function Kids() {
 }
 
 export default Kids;
+

@@ -1,50 +1,70 @@
-/* PAGE */
+/* --- GLOBAL RESETS --- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+  color: #2d3436;
+}
 
 
 
-.men-page {
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  /* TITLE */
-  .page-title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 28px;
-  }
+/* --- FIXED NAVBAR --- */
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  background: #ffffff;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.page-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+ 
+}
+
   
   /* SEARCH */
   .search-box {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  
-  .search-box input {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px 14px;
-    font-size: 14px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-  }
-  
-  .search-box input:focus {
-    border-color: #000;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  position: sticky;
+  top: 85px; /* Sits just below the fixed Navbar */
+  z-index: 1000;
+}
+
+.search-box input {
+  flex: 1;
+  max-width: 400px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 1px solid #dfe6e9;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  outline: none;
+  transition: border 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #bfa37e; /* Gold accent */
+}
+
   /* CATEGORY */
   .category {
-    margin-bottom: 35px;
+    margin-bottom: 3px;
+    
   }
   
   .category-title {
@@ -157,18 +177,36 @@
   
 
   .bottom-cart {
-    position: sticky;
-    bottom: 0;
-    background: #000;
-    color: #fff;
-    padding: 14px 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 12px 12px 0 0;
-    margin-top: 30px;
-  }
+  /* FIX 1: Change sticky to fixed to lock it to the screen edge */
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+ 
+  /* FIX 2: Remove margin-top (this was causing your white gap) */
+  margin: 0; 
   
+  /* STYLING */
+  background: #000;
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2000; /* Ensure it stays above all cards */
+  border-radius: 20px 20px 0 0; /* Professional rounded top */
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- THE CRITICAL FIX --- */
+/* Add this to your main container class (e.g., .men-page) 
+   to prevent the last item from being hidden behind the black bar */
+.men-page {
+  padding-bottom: 100px !important; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
   .cart-info p {
     margin: 0;
     font-size: 13px;
@@ -233,12 +271,4 @@
     font-weight: 600;
     cursor: pointer;
   }
-  .Navbar{
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: white;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  }
+ 

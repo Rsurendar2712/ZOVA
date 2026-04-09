@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Service.css";
-import men from "../asset/men.jpg";
+import men from "../asset/men copy.jpg";
 import women from "../asset/wemen.jpg";
 import kids from "../asset/Haircut.jpg";
 

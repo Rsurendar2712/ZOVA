@@ -24,10 +24,10 @@ function Mainpage() {
 
   return (
     <div className="Main-page">
-       <div className="Main-page1">
+       <div className="Main-page1" id='mp1'>
          <Navbar />
         </div>
-    <div className="Main-page2" >
+    <div className="Main-page2">
       <Display />
       </div>
     <div className="Main-page3" id='service-options'>

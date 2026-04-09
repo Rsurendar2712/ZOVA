@@ -47,13 +47,13 @@ const addToCart = (item, category, title) => {
   };
 
   // INCREASE QTY
-  const increaseQty = (name) => {
-    setCart((prev) =>
-      prev.map((item) =>
-        item.name === name ? { ...item, qty: item.qty + 1 } : item
-      )
-    );
-  };
+  // const increaseQty = (name) => {
+  //   setCart((prev) =>
+  //     prev.map((item) =>
+  //       item.name === name ? { ...item, qty: item.qty + 1 } : item
+  //     )
+  //   );
+  // };
 
   // DECREASE QTY
   const decreaseQty = (name) => {
@@ -78,12 +78,12 @@ const addToCart = (item, category, title) => {
 
   return (
     <div className="men-page">
-      <div className="Navbar">
-        <Navbar />
-      </div>
+      <header className="navbar-fixed-top">
+         <Navbar cartCount={cart.length} />
+      </header>
 
-      <h1 className="page-title">{datas.title}</h1>
-
+      
+ <h1 className="page-title">{datas.title}</h1>
       {/* SEARCH */}
       <div className="search-box">
         <input
@@ -103,12 +103,14 @@ const addToCart = (item, category, title) => {
         if (filteredItems.length === 0) return null;
 
         return (
+          
           <div key={index} className="category">
             <h2 className="category-title">{category.name} </h2>
 
             {filteredItems.map((item, i) => (
               <div key={i} className="item-card">
                 <div>
+                  
                   <h3>{item.name } </h3>
                   {item.duration && (
                     <p className="duration">{item.duration}</p>
@@ -132,19 +134,20 @@ const addToCart = (item, category, title) => {
 
       {/* CART LIST (EDIT BOOKING) */}
       {cart.length > 0 && (
-        <div className="cart-list">
-          <h2>Cart</h2>
+        <div className="cart-list" id='Cart'>
+          <h2>Cart 🛒</h2>
 
           {cart.map((item, index) => (
             <div key={index} className="cart-item">
-              <span>{item.name}</span>
+              
 
               <div className="cart-controls">
                 <button onClick={() => decreaseQty(item.name)}>-</button>
-
+                <b>{item.category}</b><br/>
+              <span>{item.name}</span>
                 <span>{item.qty}</span>
 
-                <button onClick={() => increaseQty(item.name)}>+</button>
+        
 
                 <button
                   className="remove-btn"
@@ -167,6 +170,7 @@ const addToCart = (item, category, title) => {
             <p>{cart.length} Services Added</p>
             <strong>₹{totalAmount}</strong>
           </div>
+        
 
           <button className="book-btn" onClick={goToBooking}>
             Book Now

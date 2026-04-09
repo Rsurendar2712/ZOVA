@@ -39,8 +39,14 @@ export default function Booking() {
   const handleBooking = () => {
 
    
-  if (!date || !time || !customer.name || !/^[6-9]\d{9}$/.test(customer.mobile)) {
-  alert("Enter valid mobile number");
+let errors = [];
+if (!date) errors.push("Date");
+if (!time) errors.push("Time");
+if (!customer.name) errors.push("Name");
+if (!/^[6-9]\d{9}$/.test(customer.mobile)) errors.push("Valid Mobile Number");
+
+if (errors.length > 0) {
+  alert("Please provide: " + errors.join(", "));
   return;
 }
 

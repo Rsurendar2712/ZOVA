@@ -1,141 +1,256 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* --- CORE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+#Cart { scroll-margin-top: 100px; }
+
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px; /* Fixed height for consistency */
+}
+
+.logo img { height: 45px; width: auto; }
+
+/* --- DESKTOP NAV --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #f0f4f8;
+  color: #2563eb !important;
+}
+
+.booking-btn {
+  padding: 10px 22px;
+  background: #dfc013;
+  color: white !important;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* --- CART ICON --- */
+/* --- DYNAMIC CART LINK STYLING --- */
+
+.cart-item-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-cart-link {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.5rem; /* Emoji size */
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Pop effect on hover */
+.nav-cart-link:hover {
+  transform: scale(1.15);
+}
+
+/* --- PROFESSIONAL NOTIFICATION BADGE --- */
+.nav-cart-badge {
+  position: absolute;
+  top: 2px;
+  right: -2px;
+  background-color: #ff4d4d; /* Bright professional red */
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffffff; /* Contrast ring around the badge */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   
-  .navbar {
+  /* Prevent text from being selectable */
+  user-select: none;
+  pointer-events: none;
+}
+
+/* --- SMART SCROLL MARGIN --- */
+/* This ensures that when you jump to #Cart on ANY page, 
+   the title isn't hidden under your sticky navbar */
+#Cart {
+  scroll-margin-top: 90px; /* Adjust this to match your Navbar height */
+  transition: all 0.5s ease;
+}
+
+/* --- MOBILE SPECIFIC ALIGNMENT --- */
+@media (max-width: 1008px) {
+  .cart-item-wrapper {
     width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: white;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 5px 20px rgba(238, 234, 234, 0.08);
+    padding: 15px 0;
+    border-top: 1px solid #f1f1f1; /* Separation line in mobile menu */
   }
-  
-  .navbar-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  .nav-cart-link {
+    font-size: 2rem; /* Larger for easier tapping on mobile */
   }
-  
-  /* Logo */
-   .logo img {
-    height: 50px;        /* 👈 PERFECT navbar size */
-      width: autoz;     /* keep aspect ratio*/
-    border: 0;
-    margin: 0;
-  } 
-  
-  /* Links */
+
+  .nav-cart-badge {
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+    min-width: 22px;
+    height: 22px;
+  }
+}
+/* --- MOBILE ICON --- */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* --- PERFECT MOBILE VIEW --- */
+@media (max-width: 1008px) {
+  .menu-icon { display: block; }
+
   .nav-links {
-    list-style: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: white;
+    gap: 0; /* Gap handled by padding */
+    max-height: 0; /* Animated height */
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    max-height: 500px; /* Large enough to show all items */
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    width: 100%;
     display: flex;
-    gap: 35px;
-    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
   }
-  
-  .btn  {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 500;
-    transition: 0.3s ease;
-    background-color: white;
-  }
-  
-  .btn:hover {
-    padding: 8px 18px;
-    background: #2563eb;
-    color: white !important;
-    border-radius: 30px;
-    transition: 0.3s ease;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  /* Booking button */
-  .booking-btn {
-    padding: 8px 18px;
-    background: rgb(223, 192, 19);
-    color: white !important;
-    border-radius: 30px;
-    transition: 0.3s ease;
-    text-decoration: none;
-  }
-  
-  .booking-btn:hover{
-    background:rgb(241, 219, 16) !important;
-    box-shadow: rgb(236, 60, 47);
-    transform: scale(1.02);
-  }
-  
-  /* Mobile menu icon */
-  .menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  /* Mobile responsive */
-  @media (max-width: 1008px) {
-    .menu-icon {
-      display: block;
-    }
-  
-    .nav-links {
-      position: absolute;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      height:0;
-      overflow: hidden;
-      flex-direction: column;
-      background: white;
-      transition: 0.4s ease;
-    }
-  
-    .nav-links.active {
-      height: 280px;
-      padding: 20px 0;
-    }
-  
-    .nav-links li {
-      padding: 10px 0;
-    }
 
-    .booking-btn {
-      padding: 8px 18px;
-      background: rgb(223, 192, 19);
-      color: white !important;
-      border-radius: 30px;
-      transition: 0.3s ease;
-      text-decoration: none;
-    }
-    
-    .booking-btn:hover{
-      background:rgb(241, 87, 16) !important;
-      box-shadow: rgb(236, 60, 47);
-    
-    }
-    
+  .btn, .booking-btn {
+    width: 85%; /* Wide buttons for easier clicking */
+    text-align: center;
+    padding: 14px;
+    display: block;
+  }
 
-    .btn{
-      padding: 8px 18px;
-      background: #83a7a8;
-      color: white !important;
-      border-radius: 30px;
-      transition: 0.3s ease;
-      height: 4px;
-    }
+ /* --- DYNAMIC CART LINK STYLING --- */
 
-    .cart-controls button{
-      color: green;
-      width: 29px;
-      
-     
-    }
-  }  
+.cart-item-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-cart-link {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.5rem; /* Emoji size */
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Pop effect on hover */
+.nav-cart-link:hover {
+  transform: scale(1.15);
+}
+
+/* --- PROFESSIONAL NOTIFICATION BADGE --- */
+.nav-cart-badge {
+  position: absolute;
+  top: 2px;
+  right: -2px;
+  background-color: #ff4d4d; /* Bright professional red */
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffffff; /* Contrast ring around the badge */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   
+  /* Prevent text from being selectable */
+  user-select: none;
+  pointer-events: none;
+}
+
+/* --- SMART SCROLL MARGIN --- */
+/* This ensures that when you jump to #Cart on ANY page, 
+   the title isn't hidden under your sticky navbar */
+#Cart {
+  scroll-margin-top: 90px; /* Adjust this to match your Navbar height */
+  transition: all 0.5s ease;
+}
+
+/* --- MOBILE SPECIFIC ALIGNMENT --- */
+@media (max-width: 1008px) {
+  .cart-item-wrapper {
+    width: 15%;
+    padding: 15px 0;
+    border-top: 1px solid #f1f1f1; /* Separation line in mobile menu */
+  }
+
+  .nav-cart-link {
+    font-size: 2rem; /* Larger for easier tapping on mobile */
+  }
+
+  .nav-cart-badge {
+    top: 5px;
+    right: 5px;
+    font-size: 8px;
+    min-width: 17px;
+    height: 17px;
+  }
+}
+}
