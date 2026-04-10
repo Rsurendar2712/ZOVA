@@ -12,35 +12,153 @@ const Info = {
       },
     ],
   },
+  
   women: {
-    title: "👩 Women Services",
+    "title": "👩 Women Services",
     categories: [
       {
-        name: "Hair Services",
-        items: [
-          { name: "Hair Cut M", duration: "30 mins", price: 200 },
-          { name: "Hair Colouring", duration: "40 mins", price: 250 },
-          { name: "Hair Styles", duration: "45 mins", price: 300 },
-          { name: "Hair Straightening", duration: "1 hr", price: 450 },
-          { name: "Hair cut + Trimming & Shaping / Shaving", duration: "45 mins", price: 300 },
-        ],
+        name: "Threading",
+        "items": [
+      { name: "Eyebrows", "price": 59 },
+          { name: "Upper / Lower Lip", "price": 29 },
+          { name: "Chin", "price": 29 },
+          { name: "Jawline", "price": 29 },
+          { name: "Forehead", "price": 19 },
+          { name: "Sides", "price": 69 },
+          { name: "Neck", "price": 99 },
+          { name: "Full Face", "price": 249 }
+        ]
       },
       {
-        name: "Women Hair Spa",
-        items: [
-          { name: "Loreal Hair Spa (Shoulder)", duration: "1 hr", price: 799 },
-          { name: "Loreal Hair Spa (Medium)", duration: "1 hr", price: 999 },
-          { name: "Loreal Hair Spa (Long)", duration: "1 hr", price: 1199 },
-          { name: "Keratin Hair Spa (Shoulder)", duration: "1 hr", price: 999 },
-          { name: "Keratin Hair Spa (Medium)", duration: "1 hr", price: 1199 },
-          { name: "Keratin Hair Spa (Long)", duration: "1 hr", price: 1499 },
-          { name: "Scalp Advance (Shoulder)", duration: "1 hr", price: 999 },
-          { name: "Scalp Advance (Medium)", duration: "1 hr", price: 1199 },
-          { name: "Scalp Advance (Long)", duration: "1 hr", price: 1499 },
-        ],
+        name: "Haircut & Blowdry",
+        "items": [
+          { name: "Fringe / Bangs", "price": 149 },
+          { name: "Princess Cut (3-8 Years)", "price": 199 },
+          { name: "Splittante Trim", "price": 249 },
+          { name: "Straight Cut", "price": 299 },
+          { name: "U Cut", "price": 349 },
+          { name: "V Cut", "price": 349 },
+          { name: "Under Cut", "price": 499 },
+          { name: "Bob Cut", "price": 599 },
+          { name: "Layered Cut", "price": 999 },
+          { name: "Advanced Cut", "price": 1499 }
+        ]
       },
-    ],
-  },
+      {
+        name: "Hair Wash & Blast Dry",
+        "items": [
+          { name: "Princess Wash (3-8 Years)", "price": 199 },
+          { name: "Shampoo + Conditioner (Upto Neck)", "price": 199 },
+          { name: "Shampoo + Conditioner (Upto Shoulder)", "price": 249 },
+          { name: "Shampoo + Conditioner (Below Shoulder)", "price": 299 },
+          { name: "Anti Dandruff Wash", "price": 349 },
+          { name: "Keratin Shampoo Wash", "price": 399 },
+          { name: "Purifying Oil Wash", "price": 349 }
+        ]
+      },
+      {
+        name: "Wash & Blowdry",
+        "items": [
+          { name: "Upto Neck", "price": 349 },
+          { name: "Shoulder", "price": 399 },
+          { name: "Below Shoulder", "price": 449 },
+          { name: "Waist", "price": 549 }
+        ]
+      },
+      {
+        name: "Therapy",
+        "items": [
+          { name: "Head Massage (30 mins)", "price": 499 },
+          { name: "Mixed Oil Massage (30 mins)", "price": 799 },
+          { name: "Lice Treatment", "price": 1500 },
+        ]
+      },
+        {
+         name: "Hair Spa",
+        "items": [ 
+          { name: "Shoulder Length (1 Hrs)", "price": 799 },
+          { name: "Medium Length(1 Hrs)", "price": 999 },
+          { name: "Long Length(1 Hrs)", "price": 1199 }
+        ]
+      },
+      {
+        name: "Facials",
+        "items": [
+          { name: "Express Facial (30 Mins)", "price": 499 },
+          { name: "Tan Away Facial", "price": 799 },
+          { name: "Fruit Facial", "price": 999 },
+          { name: "Gold Facial", "price": 1499 },
+          { name: "Diamond Facial", "price": 1799 },
+          { name: "Pearl Facial", "price": 1799 },
+          { name: "Wine Facial", "price": 1999 }
+        ]
+      },
+      {
+        name: "Skin Treatment",
+        "items": [
+          { name: "Acne Treatment Facial", "price": 1999 },
+          { name: "Pimple Treatment Facial", "price": 2299 },
+          { name: "Pigmentation", "price": 2999 },
+          { name: "Haldi Radiance", "price": 2999 },
+          { name: "Skin Whitening", "price": 3499 },
+          { name: "Radiance 10 Layer", "price": 3999 }
+        ]
+      },
+      {
+        name: "Extras",
+        "items": [
+          { name: "Detan", "price": 199 },
+          { name: "Gel Peel-Off Mask", "price": 499 }
+        ]
+      },
+      {
+        name: "Detan / Bleach",
+        "items": [
+          { name: "Upper / Lower Lip", "price": 49 },
+          { name: "Nape", "price": 99 },
+          { name: "Underarms", "price": 99 },
+          { name: "Buttock Crack", "price": 99 },
+          { name: "Feet", "price": 99 },
+          { name: "Half Arms", "price": 199 },
+          { name: "Full Arms", "price": 249 },
+          { name: "Buttocks", "price": 199 },
+          { name: "Bikini Line", "price": 199 },
+          { name: "Midriff", "price": 199 },
+          { name: "Half Front / Half Back", "price": 199 },
+          { name: "Face & Neck", "price": 299 },
+          { name: "Abdomen", "price": 299 },
+          { name: "Hollywood", "price": 349 },
+          { name: "Full Front / Full Back", "price": 349 },
+          { name: "Half Legs", "price": 349 },
+          { name: "Full Legs", "price": 449 },
+          { name: "Full Body (Excluding Brazilian & Hollywood)", "price": 1299 },
+          { name: "Full Body (With Hollywood)", "price": 1599 }
+        ]
+      },
+      {
+        name: "Manicure",
+        "items": [
+          { name: "Glow Up", "price": 299 },
+          
+          { name: "Strawberry", "price": 399 },
+          { name: "Rose Petals", "price": 499 },
+          { name: "Pedilogix Bubble Gum", "price": 599 },
+          { name: "Alga Nector", "price": 1199 }
+        ]
+      },
+      {
+        name: "Pedicure",
+        "items": [
+          { name: "Glow Up", "price": 499 },
+          { name: "Strawberry", "price": 499 },
+          { name: "Rose Petals", "price": 599 },
+          { name: "Pedilogix Bubble Gum", "price": 799 },
+          { name: "Alga Nector", "price": 1499 }
+        ]
+      }
+    ]
+  }
+,
 
   men: {
   title: "👨 Men Services",

@@ -126,7 +126,131 @@ export const data =()=> {
       {"package": "Basic Package", "price": 7999},
       {"package": "Advance Package", "price": 9999}
     ]
-  }
+  },
+
+
+
+  {
+   title: "👨 Women Services",
+
+  "THREADING": [
+    "Eyebrows - 59",
+    "Upper / Lower Lip - 29",
+    "Chin - 29",
+    "Jawline - 29",
+    "Forehead - 19",
+    "Sides - 69",
+    "Neck - 99",
+    "Full Face - 249"
+  ],
+  "HAIRCUT & BLOWDRY": [
+    "Fringe / Bangs = 149",
+    "Princess Cut (Any Haircut Between 3 To 8 Years) = 199",
+    "Splittante Trim - 249",
+    "Straight Cut - 299",
+    "U Cut - 349",
+    "V Cut - 349",
+    "Under Cut - 499",
+    "Bob Cut - 599",
+    "Layered Cut - 999",
+    "Advanced Cut - 1499"
+  ],
+  "HAIR WASH & BLAST DRY": [
+    "Princess Wash (Aged Between 3-8 Years) - 199",
+    "Shampoo Wash + Conditioner (Upto Neck) - 199",
+    "Shampoo Wash + Conditioner (Upto Shoulder) - 249",
+    "Shampoo Wash + Conditioner (Below Shoulder) - 299",
+    "Anti Dandruff Shampoo Wash + Conditioner - 349",
+    "Keratin Shampoo Wash + Conditioner a 399",
+    "Purifying Oil Hair Wash + Conditioner - 349"
+  ],
+  "WASH & BLOWDRY": [
+    "Upto Neck - 349",
+    "Shoulder - 399",
+    "Below Shoulder = 449",
+    "Waist - 549"
+  ],
+  "THERAPY": [
+    "Head Massage (30 Mins) - 499",
+    "(Aroma Oil)",
+    "Mixed Oil Massage (30 Mins) - 799",
+    "(Almond, Olive, Coconut)",
+    "Lice Treatment - 1500",
+    "Hair Spa Loreal Keratin Scalp Advance",
+    "Shoulder Length - 799 999 999",
+    "(1 Hrs)",
+    "Medium Length - 999 1199 1199",
+    "(1 Hrs)",
+    "Long Length = 1199 1499 1499",
+    "(1 Hrs)"
+  ],
+  "FACIALS": [
+    "Express Facial (30 Mins) - 499",
+    "Tan Away Facial - 799",
+    "Fruit Facial - 999",
+    "Gold Facial - 1499",
+    "Diamond Facial - 1799",
+    "Pearl Facial - 1799",
+    "Wine Facial - 1999"
+  ],
+  "SKIN TREATMENT": [
+    "Ance Treatment Facial s 1999",
+    "Pimple Treatment Facial i, 2299",
+    "Pigmentation _ 2999",
+    "Haldi Radiance - 2999",
+    "Skin Whitening = 3499",
+    "Radiance 10 Layer - 3999"
+  ],
+  "EXTRAS": [
+    "Detan ~ 199",
+    "Gel Peel-Off Mask - 499"
+  ],
+  "DETAN / BLEACH": [
+    "Upper / Lower Lip - 49",
+    "Nape - 99",
+    "Underarms - 99",
+    "Buttock Crack - 99",
+    "Feet J 99 <]",
+    "Half Arms - 199",
+    "Full Arms - 249",
+    "Buttocks - 199",
+    "Bikini Line - 199",
+    "Midriff = 199",
+    "Half Front Or Half Back = 199",
+    "Face & Neck = 299",
+    "Abdomen = 299",
+    "Hollywood - 349",
+    "Full Front Or Full Back = 349",
+    "Half Legs - 349",
+    "Full Legs - 449",
+    "Full Body (Excluding Brazilian & Hollywood) - 1299",
+    "Full Body (with Hollywood) - 1599"
+  ],
+  "MANICURE": [
+    "Glow Up - 299",
+    "(Cut & File, Cleanser, Scrub, Mask, Nail Paint)",
+    "Strawberry - 399",
+    "(Cut & File, Cleanser, Scrub, Massage, Mask, Nail Paint)",
+    "Rose Petals = 499",
+    "(Cut & File, Cleanser, Scrub, Massage, Mask, Nail Paint)",
+    "Pedilogix Bubble Gum - 599",
+    "(Cut & File, Cleanser, Scrub, Massage, Mask, Nail Paint)",
+    "Alga Nector - 1199",
+    "(Cut & File, Cleanser, Scrub, Massage, Mask, Nail Paint)"
+  ],
+  "PEDICURE": [
+    "Glow Up - 499",
+    "(Cut & File, Cleanser, Scrub, Mask, Nail Paint)",
+    "Strawberry - 499",
+    "(Cut & File, Cleanser, Scrub, Massage, Mask, Nail Paint)",
+    "Rose Petals a 599",
+    "(Cut & File, Cleanser, Scrub, Massage, Mask, Nail Paint)",
+    "Pedilogix Bubble Gum - 799",
+    "(Cut & File, Cleanser, Scrub, Massage, Mask, Nail Paint)",
+    "Alga Nector - 1499",
+    "(Cut & File, Cleanser, Scrub, Massage, Mask, Nail Paint)"
+  ]
+}
 ]
 
 };

@@ -1,6 +1,5 @@
-
 import React, { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Info from "../Data/Info";
 import Navbar from "./Navbar";
 import "./list.css";
@@ -11,49 +10,39 @@ function Men() {
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
 
+  // Fetching Women specific data
   const datas = Info?.men;
+
   if (!datas || !datas.categories) return <p>No data available</p>;
 
   // ADD SERVICE
-  
-const addToCart = (item, category, title) => {
-  setCart((prev) => {
-    const existing = prev.find(
-      (i) =>
-        i.name === item.name &&
-        i.category === category &&
-        i.title === title
-    );
-
-    if (existing) {
-      return prev.map((i) =>
-        i.name === item.name &&
-        i.category === category &&
-        i.title === title
-          ? { ...i, qty: i.qty + 1 }
-          : i
+  const addToCart = (item, category, title) => {
+    setCart((prev) => {
+      const existing = prev.find(
+        (i) =>
+          i.name === item.name &&
+          i.category === category &&
+          i.title === title
       );
-    }
 
-  
-    return [...prev, { ...item, category, title, qty: 1 }];
-  });
-};
+      if (existing) {
+        return prev.map((i) =>
+          i.name === item.name &&
+          i.category === category &&
+          i.title === title
+            ? { ...i, qty: i.qty + 1 }
+            : i
+        );
+      }
 
+      return [...prev, { ...item, category, title, qty: 1 }];
+    });
+  };
 
   // REMOVE SERVICE
   const removeItem = (name) => {
     setCart((prev) => prev.filter((item) => item.name !== name));
   };
-
-  // INCREASE QTY
-  // const increaseQty = (name) => {
-  //   setCart((prev) =>
-  //     prev.map((item) =>
-  //       item.name === name ? { ...item, qty: item.qty + 1 } : item
-  //     )
-  //   );
-  // };
 
   // DECREASE QTY
   const decreaseQty = (name) => {
@@ -77,41 +66,47 @@ const addToCart = (item, category, title) => {
   };
 
   return (
-    <div className="men-page">
+    /* Keeping 'men-page' class as requested, though this is Women component */
+    <div className="men-page"> 
       <header className="navbar-fixed-top">
-         <Navbar cartCount={cart.length} />
+        <Navbar cartCount={cart.length} />
       </header>
 
-      
- <h1 className="page-title">{datas.title}</h1>
-      {/* SEARCH */}
+      <h1 className="page-title">{datas.title}</h1>
+
+      {/* --- IMPROVED SEARCH BOX --- */}
       <div className="search-box">
         <input
           type="text"
-          placeholder="Search services..."
+          placeholder="Search for services or categories (e.g. Facial)..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
-      {/* SERVICES */}
+      {/* --- SMART FILTERING SERVICES --- */}
       {datas.categories.map((category, index) => {
-        const filteredItems = category.items.filter((item) =>
-          item.name.toLowerCase().includes(search.toLowerCase())
-        );
+        const searchTerm = search.toLowerCase();
+        
+        // Check if search matches category name
+        const isCategoryMatch = category.name.toLowerCase().includes(searchTerm);
+
+        // Filter items: show item if its name matches OR if the category name matches
+        const filteredItems = category.items.filter((item) => {
+          const isItemMatch = item.name.toLowerCase().includes(searchTerm);
+          return isItemMatch || isCategoryMatch;
+        });
 
         if (filteredItems.length === 0) return null;
 
         return (
-          
           <div key={index} className="category">
-            <h2 className="category-title">{category.name} </h2>
+            <h2 className="category-title">{category.name}</h2>
 
             {filteredItems.map((item, i) => (
               <div key={i} className="item-card">
                 <div>
-                  
-                  <h3>{item.name } </h3>
+                  <h3>{item.name}</h3>
                   {item.duration && (
                     <p className="duration">{item.duration}</p>
                   )}
@@ -121,7 +116,8 @@ const addToCart = (item, category, title) => {
                   <span>₹{item.price}</span>
                   <button
                     className="add-btn"
-                    onClick={() => addToCart(item,category.name,"Men")}
+                    /* UPDATED: Dynamic title "Women" instead of hardcoded "Men" */
+                    onClick={() => addToCart(item, category.name, "Women")} 
                   >
                     Add
                   </button>
@@ -139,15 +135,11 @@ const addToCart = (item, category, title) => {
 
           {cart.map((item, index) => (
             <div key={index} className="cart-item">
-              
-
               <div className="cart-controls">
                 <button onClick={() => decreaseQty(item.name)}>-</button>
                 <b>{item.category}</b><br/>
-              <span>{item.name}</span>
+                <span>{item.name}</span>
                 <span>{item.qty}</span>
-
-        
 
                 <button
                   className="remove-btn"
@@ -170,7 +162,6 @@ const addToCart = (item, category, title) => {
             <p>{cart.length} Services Added</p>
             <strong>₹{totalAmount}</strong>
           </div>
-        
 
           <button className="book-btn" onClick={goToBooking}>
             Book Now
@@ -182,4 +173,3 @@ const addToCart = (item, category, title) => {
 }
 
 export default Men;
-
