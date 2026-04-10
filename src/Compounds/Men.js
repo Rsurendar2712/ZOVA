@@ -9,11 +9,29 @@ function Men() {
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
+  const [showArrow, setShowArrow] = useState(false);
 
   // Fetching Women specific data
   const datas = Info?.men;
 
   if (!datas || !datas.categories) return <p>No data available</p>;
+
+  // Show button when page is scrolled down 300px
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    setShowArrow(true);
+  } else {
+    setShowArrow(false);
+  }
+});
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 
   // ADD SERVICE
   const addToCart = (item, category, title) => {
@@ -127,6 +145,12 @@ function Men() {
           </div>
         );
       })}
+
+      {showArrow && (
+  <button className="scroll-up-btn" onClick={scrollToTop}>
+    ↑
+  </button>
+)}
 
       {/* CART LIST (EDIT BOOKING) */}
       {cart.length > 0 && (

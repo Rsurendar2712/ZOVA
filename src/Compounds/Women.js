@@ -1,19 +1,40 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Info from "../Data/Info";
 import Navbar from "./Navbar";
 import "./list.css";
 import "./Navbar.css";
 
+
 function Women() {
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
+  const [showArrow, setShowArrow] = useState(false);
 
   // Fetching Women specific data
   const datas = Info?.women;
 const pageTitle = datas.title || "Women Services";
   if (!datas || !datas.categories) return <p>No data available</p>;
+
+
+  
+// Show button when page is scrolled down 300px
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    setShowArrow(true);
+  } else {
+    setShowArrow(false);
+  }
+});
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 
   // ADD SERVICE
   const addToCart = (item, category, title) => {
@@ -64,6 +85,9 @@ const pageTitle = datas.title || "Women Services";
   const goToBooking = () => {
     navigate("/booking", { state: { cart, totalAmount } });
   };
+
+
+
 
   return (
     /* Keeping 'men-page' class as requested, though this is Women component */
@@ -128,6 +152,12 @@ const pageTitle = datas.title || "Women Services";
         );
       })}
 
+       {showArrow && (
+  <button className="scroll-up-btn" onClick={scrollToTop}>
+    ↑
+  </button>
+)}
+
       {/* CART LIST (EDIT BOOKING) */}
       {cart.length > 0 && (
         <div className="cart-list" id='Cart'>
@@ -141,6 +171,8 @@ const pageTitle = datas.title || "Women Services";
                 <span>{item.name}</span>
                 <span>{item.qty}</span>
 
+
+  
                 <button
                   className="remove-btn"
                   onClick={() => removeItem(item.name)}
@@ -168,6 +200,8 @@ const pageTitle = datas.title || "Women Services";
           </button>
         </div>
       )}
+
+     
     </div>
   );
 }
