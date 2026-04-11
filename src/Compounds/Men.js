@@ -135,7 +135,7 @@ const scrollToTop = () => {
                   <button
                     className="add-btn"
                     /* UPDATED: Dynamic title "Women" instead of hardcoded "Men" */
-                    onClick={() => addToCart(item, category.name, "Women")} 
+                    onClick={() => addToCart(item, category.name, "Men")} 
                   >
                     Add
                   </button>
