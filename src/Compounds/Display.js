@@ -20,7 +20,7 @@ function OfferSlider() {
 
       {/* Video Banner */}
       <div className="offer-video">
-        <video src={https://www.youtube.com/watch?v=i_NNEtmyMx0} autoPlay muted loop />
+        <video src={Fvid} autoPlay muted loop />
 
 
       </div>
