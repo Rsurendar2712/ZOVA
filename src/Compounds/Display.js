@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./Display.css";
-import video from "../asset/nature.mp4";
+import video from "../asset/Fvid.mp4";
 
 import logo from "../asset/logo.jpg";
 
