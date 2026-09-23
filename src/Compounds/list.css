@@ -1,0 +1,315 @@
+/* --- GLOBAL RESETS --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+  color: #2d3436;
+}
+
+
+
+/* --- FIXED NAVBAR --- */
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  background: #ffffff;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.page-title {
+  margin-top: 70px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+  
+
+  
+  /* SEARCH */
+  .search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  position: sticky;
+  top: 85px; /* Sits just below the fixed Navbar */
+  z-index: 1000;
+}
+
+.search-box input {
+  flex: 1;
+  max-width: 400px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 1px solid #dfe6e9;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  outline: none;
+  transition: border 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #bfa37e; /* Gold accent */
+}
+
+  /* CATEGORY */
+  .category {
+    margin-bottom: 3px;
+    
+  }
+  
+  .category-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #000;
+    padding-left: 10px;
+  }
+  
+  /* ITEMS */
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* CARD */
+  .item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* LEFT */
+  .item-info h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .duration {
+    font-size: 13px;
+    color: #777;
+    margin-top: 4px;
+  }
+  
+  /* RIGHT */
+  .item-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .price {
+    font-weight: 600;
+  }
+  
+  /* BUTTON */
+  .add-btn {
+    padding: 6px 14px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  
+  .add-btn:hover {
+    background: #333;
+  }
+  
+  /* EMPTY */
+  .empty-text {
+    text-align: center;
+    margin-top: 50px;
+    color: #888;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .item-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .item-action {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .Navbar{
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: white;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+
+      .cart-item:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.cart-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-left: 20px;
+}
+  }
+  
+
+  .bottom-cart {
+  /* FIX 1: Change sticky to fixed to lock it to the screen edge */
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+ 
+  /* FIX 2: Remove margin-top (this was causing your white gap) */
+  margin: 0; 
+  
+  /* STYLING */
+  background: #000;
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2000; /* Ensure it stays above all cards */
+  border-radius: 20px 20px 0 0; /* Professional rounded top */
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- THE CRITICAL FIX --- */
+/* Add this to your main container class (e.g., .men-page) 
+   to prevent the last item from being hidden behind the black bar */
+.men-page {
+  padding-bottom: 100px !important; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+  .cart-info p {
+    margin: 0;
+    font-size: 13px;
+  }/* The main container */
+.cart-controls {
+  display: flex;
+  align-items: center;    /* Keeps the buttons and number on the same horizontal line */
+  gap: 12px;              /* Adds clean, even space between all elements */
+  margin-top: 10px;
+}
+
+/* Base style for ALL buttons in the control group */
+.cart-controls button {
+  /* THE CENTERING FIX: */
+  display: inline-flex;   
+  align-items: center;    /* Centers symbol vertically */
+  justify-content: center; /* Centers symbol horizontally */
+  
+  /* UNIFORMITY: Make all buttons the exact same size */
+  width: 32px;
+  height: 32px;
+  padding: 0;             /* Remove default padding that pushes symbols to the side */
+  
+  /* STYLING: */
+  background-color: #1a1a1a; 
+  color: #4ade80;         /* A professional green for + and - */
+  border: none;
+  border-radius: 6px;     /* Modern, slightly rounded corners */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+/* Hover effect for better UX */
+.cart-controls button:hover {
+  background-color: #333;
+}
+
+/* The Quantity Number styling */
+.cart-controls span {
+  font-weight: 600;
+  font-size: 16px;
+  min-width: 20px;        /* Prevents the layout from jumping when 9 becomes 10 */
+  text-align: center;
+}
+
+/* Specific styling for the Remove button */
+.cart-controls .remove-btn {
+  color: #ff4d4d;         /* Professional red for the X */
+  background-color: #1a1a1a;
+  font-size: 14px;        /* Icons usually need to be a bit smaller to look centered */
+  margin-left: 4px;       /* Extra bit of space to separate "Actions" from "Quantity" */
+}
+  
+  .book-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+
+  .scroll-up-btn {
+  position: fixed;
+  bottom: 90px; /* Sits above your bottom cart */
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: #2563eb; /* Professional blue */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  z-index: 1500; /* Stays above other content */
+}
+
+.scroll-up-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-5px); /* Professional lift effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* On mobile, move it slightly so it doesn't block the Book Now button */
+@media (max-width: 768px) {
+  .scroll-up-btn {
+    bottom: 110px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
+ 

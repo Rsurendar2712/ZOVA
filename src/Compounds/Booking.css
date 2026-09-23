@@ -1,0 +1,250 @@
+
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BASE STYLES (DESKTOP) ===== */
+body {
+  font-family: Poppins, sans-serif;
+  background: #f4f6f8;
+  padding-bottom: 90px; /* prevent sticky overlap */
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px;
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  font-size: 26px;
+}
+
+
+.category-btn {
+  margin: 10px;
+  width: 80%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+  /* Smooth animation */
+  transition: all 0.2s ease;
+
+  /* Depth effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* HOVER (mouse over) */
+.category-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* CLICK (real button press effect) */
+.category-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* OPTIONAL: FOCUS (keyboard users) */
+.category-btn:focus {
+  outline: none;
+  border: 2px solid #555;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.card.small {
+  font-size: 14px;
+}
+
+/* ===== FLEX ROW ===== */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* prevents overflow */
+  margin-bottom: 10px;
+}
+
+/* ===== BUTTON ===== */
+button {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* ===== OPTIONS ===== */
+.options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.options button {
+  background: #eee;
+  color: #000;
+  flex: 1;
+}
+
+.options .active {
+  background: #111;
+  color: #fff;
+}
+
+/* ===== INPUT ===== */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  max-width: 100%;
+}
+
+.input-error {
+  border: 2px solid red !important;
+  background: #fff5f5;
+}
+
+/* ===== FIX IMAGE / ELEMENT OVERFLOW ===== */
+img,
+button,
+input,
+textarea {
+  max-width: 100%;
+}
+
+/* ===== STICKY FOOTER ===== */
+.sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+ .sticky button {
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: goldenrod;
+  }
+
+/* ===== TABLET (≤ 768px) ===== */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 12px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .options {
+    gap: 8px;
+  }
+
+  .sticky {
+    padding: 12px;
+    width: auto;
+  }
+    .sticky button {
+      background-color: goldenrod;
+    }
+}
+
+/* ===== MOBILE (≤ 480px) ===== */
+@media (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .options {
+    width: 100%;
+  }
+
+  .options button {
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+
+  .sticky {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+     width: 100%;
+  }
+
+  .sticky button {
+   
+    padding: 12px;
+    font-size: 16px;
+    background-color: goldenrod;
+  }
+}

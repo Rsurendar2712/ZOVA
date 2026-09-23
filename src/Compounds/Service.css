@@ -1,0 +1,139 @@
+.service-options {
+    padding: 50px 15px;
+    text-align: center;
+    background: #fff;
+  }
+  
+  /* ======= TITLE ======= */
+  .service-options h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #111;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* ======= SLIDER ======= */
+  .slider-wrapper {
+    position: relative;
+  }
+  
+  /* ======= GRID ======= */
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 900px;
+    margin: auto;
+    align-items: center;
+  }
+  
+  /* ======= CARD ======= */
+  .option-card {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    background: #f9f9f9;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    transition: all 0.35s ease;
+  }
+  
+  .option-card:hover {
+    transform: translateY(-6px) scale(1.06);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.2);
+  }
+  
+  /* IMAGE */
+  .option-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .option-card:hover img {
+    transform: scale(1.08);
+  }
+  
+  /* OVERLAY NAME */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 16px;
+  }
+  
+  .overlay h3 {
+    padding: 8px 20px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin: 0;
+  }
+  
+  /* ======= MOBILE ======= */
+  @media (max-width: 768px) {
+    .options-grid {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 15px 10px;
+      scroll-snap-type: x mandatory;
+    }
+  
+    .option-card {
+      flex: 0 0 150px;
+      height: 150px;
+      scroll-snap-align: center;
+    }
+  
+    .options-grid::-webkit-scrollbar {
+      display: none;
+    }
+  
+    /* arrow */
+    .mobile-arrow {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+  
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+  }
+  
+  /* hide arrow on desktop */
+  @media (min-width: 769px) {
+    .mobile-arrow {
+      display: none;
+    }
+  }
+  
