@@ -3,7 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./Service.css";
 import men from "../asset/men copy.jpg";
 import women from "../asset/wemen.jpg";
+<<<<<<< HEAD
 import kids from "../asset/Haircut.png";
+=======
+import kids from "../asset/Haircut.jpg";
+>>>>>>> 5d060767d82e39a89ca2bb7ef288f5a8eaf5b28a
 
 
 
